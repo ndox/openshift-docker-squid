@@ -24,8 +24,6 @@ EXPOSE 8080/tcp
 
 COPY containerfiles/ /
 
-RUN chmod +x /openshift-entrypoint.sh
-
 ENTRYPOINT ["/openshift-entrypoint.sh"]
 
 #ENTRYPOINT ["/usr/sbin/squid"]
