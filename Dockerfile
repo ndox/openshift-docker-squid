@@ -18,7 +18,7 @@ RUN set -x \
 
 
 COPY containerfiles/ /
-USER ROOT
+USER root
 RUN chmod +x /openshift-entrypoint.sh
 
 USER 1001
