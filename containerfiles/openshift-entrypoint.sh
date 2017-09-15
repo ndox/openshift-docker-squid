@@ -7,17 +7,17 @@ echo "WHITELIST_DOMAINS :"${WHITELIST_DOMAINS}
 echo "FORCE             :"${FORCE}
 echo "TCPLOGGER_PORT    :"${TCPLOGGER_PORT}
 
-if [ x"${UPSTREAM}" = x ];
+if [ x"${UPSTREAM}" = x ]; then
   echo "Error the UPSTREAM MUST be defined"
   exit 1
 fi
 
-if [ x"${TCPLOGGER_PORT}" = x ];
+if [ x"${TCPLOGGER_PORT}" = x ]; then
   echo "Error the TCPLOGGER_PORT MUST be defined"
   exit 1
 fi
 
-if [ x"${WHITELIST_FILE}" = x ];
+if [ x"${WHITELIST_FILE}" = x ]; then
   echo "Error a white list file MUST be defined"
   exit 1
 fi
