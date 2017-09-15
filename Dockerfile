@@ -16,13 +16,18 @@ RUN set -x \
     && mkdir /data \
     && chmod 777 /data
 
+
+COPY containerfiles/ /
+USER ROOT
+RUN chmod +x /openshift-entrypoint.sh
+
 USER 1001
 
 RUN squid -v
 
 EXPOSE 8080/tcp
 
-COPY containerfiles/ /
+
 
 ENTRYPOINT ["/openshift-entrypoint.sh"]
 
