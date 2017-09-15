@@ -14,6 +14,7 @@ RUN set -x \
     && chown -R 1001:1001 /var/log/squid \
     && chmod 777  /var/run/ \
     && mkdir /data \
+    && mkdir -p /data/secrets /data/run \
     && chmod 777 /data
 
 
@@ -21,6 +22,7 @@ COPY containerfiles/ /
 USER root
 RUN chmod +x /openshift-entrypoint.sh
 
+WORKDIR /data/run
 USER 1001
 
 RUN squid -v
